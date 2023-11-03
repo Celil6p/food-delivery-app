@@ -1,6 +1,6 @@
-import ButtonComponent from '@/components/ButtonComponent'
-import CheckboxComponent from '@/components/CheckboxComponent'
-import InputComponent from '@/components/InputComponent'
+import ButtonComponent from '@/components/Button'
+import CheckboxComponent from '@/components/Checkbox'
+import InputComponent from '@/components/Input'
 import React from 'react'
 
 const LoginForm:React.FC = () => {
