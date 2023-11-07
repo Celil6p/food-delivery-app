@@ -8,6 +8,7 @@ type RestaurantCardProps = {
     minPrice: string;
     tags: string[];
     cartSize?: number;
+    key: number;
 };
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({
@@ -17,9 +18,10 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
     minPrice,
     tags,
     cartSize,
+    key,
 }) => {
     return (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden w-full font-nunito">
+        <div key={key} className="bg-white rounded-lg shadow-md overflow-hidden w-full font-nunito">
             <div className="flex justify-center relative h-40 overflow-hidden">
                 {/* Image */}
                 <Image
@@ -72,7 +74,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
                 {/* Tags */}
                 <div className="flex items-center">
                     {tags.map((tag, index) => (
-                        <div className="bg-light-gray rounded-full py-1 px-2 mx-1">
+                        <div key={key} className="bg-light-gray rounded-full py-1 px-2 mx-1">
                             <span
                                 key={index}
                                 className="flex items-center mr-2 text-xs text-neutral-black"
