@@ -4,6 +4,7 @@ interface InputProps {
     autoComplete?: string;
     className?: string;
     required?: boolean;
+    
 }
 
 const InputComponent: React.FC<InputProps> = ({ type, placeholder, autoComplete, className = '', required }) => {
@@ -12,7 +13,7 @@ const InputComponent: React.FC<InputProps> = ({ type, placeholder, autoComplete,
             type={type}
             autoComplete={autoComplete}
             required={required}
-            className={`relative w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${className}`}
+            className={`relative w-full px-3 py-2 border border-primary-gray placeholder-primary-gray text-neutral-black rounded-lg focus:outline-none focus:ring-primary-indigo focus:border-primary-indigo focus:z-10 sm:text-sm ${className}`}
             placeholder={placeholder}
         />
     );

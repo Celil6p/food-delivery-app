@@ -1,17 +1,36 @@
-interface ButtonProps {
-    type: "button" | "submit" | "reset";
-    text: string;
-    className?: string;
+import React from 'react';
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  label: string;
+  variant?: 'primary' | 'secondary' | 'danger' | 'default' ; // Add more variants as needed
+  className?: string;
 }
 
-const ButtonComponent: React.FC<ButtonProps> = ({ type, text, className = '' }) => {
-    return (
-        <button
-            type={type}
-            className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primal-purple hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${className}`}>
-            {text}
-        </button>
-    );
-}
+const Button: React.FC<ButtonProps> = ({
+  label,
+  variant = 'primary',
+  className = '',
+  ...props
+}) => {
+  // Define base styling
+  const baseStyle = 'px-4 py-2 rounded-lg';
 
-export default ButtonComponent;
+  // Define variant styling
+  const variantStyles = {
+    primary: 'bg-primary-indigo text-white hover:bg-primary-indigo-hover',
+    secondary: 'bg-white text-primary-indigo border border-primary-indigo hover:bg-primary-indigo-hover hover:text-white',
+    danger: 'bg-wite text-red-500 border border-red-600 hover:bg-red-600 hover:text-white',
+    default: 'hover:bg-light-gray',
+  };
+
+  // Combine base, variant and additional className props
+  const buttonClasses = `${baseStyle} ${variantStyles[variant]} ${className}`;
+
+  return (
+    <button className={buttonClasses} {...props}>
+      {label}
+    </button>
+  );
+};
+
+export default Button;

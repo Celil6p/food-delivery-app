@@ -1,0 +1,22 @@
+.slick-dots {
+    bottom: -240px; 
+}
+
+
+.slick-dots li button:before {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px; 
+    line-height: 15px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.slick-slider {
+    position: relative;
+  }
+
+  

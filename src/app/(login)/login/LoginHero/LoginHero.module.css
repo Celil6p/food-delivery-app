@@ -1,0 +1,20 @@
+/* Overriding slick dots styling */
+
+/* The dots container */
+.slick-dots {
+  bottom: -30px; /* adjust as needed */
+}
+
+/* The default passive dot styling */
+.slick-dots li button:before {
+  color: rgba(255, 255, 255, 0.5); /* 50% opacity white */
+  font-size: 12px; /* increase the size of the dots */
+  line-height: 15px;
+}
+
+/* The active dot styling */
+.slick-dots li.slick-active button:before {
+  color: white;
+  font-size: 15px; /* Make the active dot slightly larger */
+  line-height: 18px;
+}

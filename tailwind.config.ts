@@ -8,20 +8,26 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'nunito': ['Nunito', 'sans'], // Add Nunito font family
+        'nunito': ['Nunito', 'sans'], 
       },
       fontSize: {
-        '60': '60px', // Custom font size of 60px
+        '60': '60px', 
       },
       letterSpacing: {
-        'tighter': '0.1px', // Custom letter-spacing of 0.1px
+        'tighter': '0.1px', 
       },
       lineHeight: {
-        'tighter': '82px', // Custom line-height of 82px
+        'tighter': '82px', 
       },
       colors: {
-        'neutral-black': '#2B2B43', // Custom color 'neutral-black'
-        'primal-purple': '#697BFF'
+        'neutral-black': '#2B2B43', 
+        'primary-indigo-hover': '#697BFF',
+        'primary-indigo': '#4E60FF',
+        'light-indigo': '#F3F4FF',
+        'light-gray': '#EDEEF2',
+        'primary-gray': '#83859C',
+        'secondary-light': '#FFF3ED',
+        'secondary-default':'#FD6D22',
       }
     },
   },
