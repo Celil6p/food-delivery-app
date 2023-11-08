@@ -2,7 +2,7 @@
 
 This project is built using [Next.js 14](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), chosen for its cutting-edge features and capabilities. Next.js offers improved performance with its Rust compiler, enhanced image optimization, and Incremental Static Regeneration (ISR), which contributes to an excellent developer experience and a high-performing application.
 
-![Dashboard Screenshot](/dashboard-screenshot.png)
+![Dashboard Screenshot](/public/dashboard-screenshot.png)
 
 ## Getting Started
 ### Prerequisites
