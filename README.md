@@ -91,7 +91,7 @@ In our file structure, parentheses indicate optional or dynamic route segments. 
 - `page.js` files define publicly accessible routes.
 - `layout.js` files define layouts that are shared between multiple pages.
 
-Related documentation is [here]{https://nextjs.org/docs/app/building-your-application/routing/route-groups}.
+Related documentation is [here](https://nextjs.org/docs/app/building-your-application/routing/route-groups).
 
 For example, `(login)` in our directory signifies an optional segment for the login route.
 
