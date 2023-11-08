@@ -21,7 +21,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
     key,
 }) => {
     return (
-        <div key={key} className="bg-white rounded-lg shadow-md overflow-hidden w-full font-nunito">
+        <div key={key} className="bg-white hover:bg-light-gray rounded-lg shadow-md overflow-hidden w-full font-nunito">
             <div className="flex justify-center relative h-40 overflow-hidden">
                 {/* Image */}
                 <Image

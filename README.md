@@ -1,8 +1,31 @@
 # Food Delivery App
 
+he Food Delivery App is an innovative solution designed to provide users with a convenient and fast way to order food from their favorite restaurants. With a focus on a seamless user experience, the app showcases a modern design, intuitive navigation, and a range of features to make food ordering a breeze.
+
+![Dashboard Screenshot](/public/dashboard-screenshot.png)
+
 This project is built using [Next.js 14](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), chosen for its cutting-edge features and capabilities. Next.js offers improved performance with its Rust compiler, enhanced image optimization, and Incremental Static Regeneration (ISR), which contributes to an excellent developer experience and a high-performing application.
 
 ![Dashboard Screenshot](/public/dashboard-screenshot.png)
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Local Development](#local-development)
+  - [Accessing the Application Online](#accessing-the-application-online)
+  - [Implemented Pages](#implemented-pages)
+- [File Structure Overview](#file-structure-overview)
+  - [Why Parentheses in Filenames?](#why-Parentheses-in-filenames?)
+  - [Login Directory](#login-directory)
+  - [Main Directory](#main-directory)
+  - [Navigation Directory](#navigation-directory)
+  - [Global Assets](#global-assets)
+- [Routing](#routing)
+- [Components](#components)
+- [Styles](#styles)
+- [Conclusion](#conclusion)
+
 
 ## Getting Started
 ### Prerequisites
@@ -54,6 +77,15 @@ The application includes the following pages, created based on the provided Figm
 - **Account Settings (`"/settings/account"`):** The user account settings page.
 
 ## File Structure Overview
+
+The project is organized into distinct directories:
+
+- `app/(login)`: Login functionality related files.
+- `app/(main)`: Main interface components and pages.
+- `app/(navigation)`: Navigation components like the navbar and hamburger menu.
+
+Each directory includes a `layout.tsx` for defining the layout of that section.
+
 ### Why Parentheses in Filenames?
 
 In our file structure, parentheses indicate optional or dynamic route segments. This is a Next.js App Router convention where:
@@ -64,15 +96,6 @@ In our file structure, parentheses indicate optional or dynamic route segments. 
 Related documentation is [here]{https://nextjs.org/docs/app/building-your-application/routing/route-groups}.
 
 For example, `(login)` in our directory signifies an optional segment for the login route.
-
-
-The project is organized into distinct directories:
-
-- `app/(login)`: Login functionality related files.
-- `app/(main)`: Main interface components and pages.
-- `app/(navigation)`: Navigation components like the navbar and hamburger menu.
-
-Each directory includes a `layout.tsx` for defining the layout of that section.
 
 ### Login Directory
 
@@ -86,7 +109,6 @@ Each directory includes a `layout.tsx` for defining the layout of that section.
 
 ### Main Directory
 
-- `CategoryButton.tsx`: Displays categories.
 - `CategoryButton.tsx`: Displays categories.
 - `MainLayout.tsx`: Wraps the main content.
 - `PromotionCard.tsx`: Displays promotions.
@@ -115,11 +137,12 @@ Routes are managed within the `app` directory. Each `page.tsx` corresponds to a 
 
 ## Components
 
-Reusable pieces of the application, located in their respective directories and imported as needed. For instance, `LoginForm.tsx` is included within `login/page.tsx` to render the form.
+Reusable pieces of the application, located in their respective directories and imported as needed. For instance, `LoginForm.tsx` and `Settings.tsx` are included within `login/page.tsx` to render the form and `home/settings/page.tsx` to render user settings.
 
 ## Styles
 
 The project uses TailwindCSS for styling, utilizing CSS modules for component-scoped styles and a global CSS file for universal styles.
+Only raw CSS used in `/login/LoginHero/LoginHero.tsx` to override custom styling to react-slick slider package.
 
 ## Conclusion
 

@@ -2,6 +2,7 @@ import React from "react";
 import PromotionCard from "./PromotionCard";
 import CategoryButton from "./CategoryButton";
 import RestaurantCard from "./RestaurantCard";
+import Link from "next/link";
 
 const categories = [
     { label: "Pizza", src: "/category/Pizza.png" },
@@ -19,7 +20,7 @@ const dummyRestaurants = [
         time: "30-40 min",
         minPrice: "15",
         tags: ["Burger", "Pizza"],
-        cartSize: 0
+        cartSize: 0,
     },
     {
         name: "Ninja Sushi 1",
@@ -27,7 +28,7 @@ const dummyRestaurants = [
         time: "20-30 min",
         minPrice: "22",
         tags: ["Sushi"],
-        cartSize: 2
+        cartSize: 2,
     },
     {
         name: "Ninja Sushi 2",
@@ -35,7 +36,7 @@ const dummyRestaurants = [
         time: "20-30 min",
         minPrice: "25",
         tags: ["Sushi"],
-        cartSize: 0
+        cartSize: 0,
     },
     {
         name: "Ninja Sushi 3",
@@ -43,7 +44,7 @@ const dummyRestaurants = [
         time: "20-30 min",
         minPrice: "18",
         tags: ["Sushi"],
-        cartSize: 1
+        cartSize: 1,
     },
     {
         name: "Ninja Sushi 4",
@@ -51,7 +52,7 @@ const dummyRestaurants = [
         time: "15-25 min",
         minPrice: "20",
         tags: ["Sushi"],
-        cartSize: 0
+        cartSize: 0,
     },
     {
         name: "Ninja Sushi 5",
@@ -59,7 +60,7 @@ const dummyRestaurants = [
         time: "25-35 min",
         minPrice: "30",
         tags: ["Sushi"],
-        cartSize: 1
+        cartSize: 1,
     },
 ];
 
@@ -105,15 +106,17 @@ const Home = () => {
             {/*Restaurants*/}
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 items-center justify-center gap-8 my-8">
                 {dummyRestaurants.map((restaurant, index) => (
-                    <RestaurantCard
-                        key={index}
-                        name={restaurant.name}
-                        imageSrc={restaurant.imageSrc}
-                        time={restaurant.time}
-                        minPrice={restaurant.minPrice}
-                        tags={restaurant.tags}
-                        cartSize={restaurant.cartSize}
-                    />
+                    <Link href={"/login"} key={index}> 
+                        <RestaurantCard
+                            key={index}
+                            name={restaurant.name}
+                            imageSrc={restaurant.imageSrc}
+                            time={restaurant.time}
+                            minPrice={restaurant.minPrice}
+                            tags={restaurant.tags}
+                            cartSize={restaurant.cartSize}
+                        />
+                    </Link>
                 ))}
             </div>
         </>

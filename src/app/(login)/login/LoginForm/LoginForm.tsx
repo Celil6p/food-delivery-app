@@ -2,12 +2,15 @@ import FormButton from "@/app/(login)/login/LoginForm/FormButton";
 import CheckboxComponent from "@/components/Checkbox";
 import InputComponent from "@/components/Input";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const LoginForm: React.FC = () => {
     return (
         <div className="w-screen min-w-[308px] flex-1 min-h-screen flex items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8">
+            
             <div className="max-w-[350px] w-full space-y-8">
+            <Link href={"/"}>
                 <Image
                     src="/logo.svg"
                     alt="Logo"
@@ -20,6 +23,7 @@ const LoginForm: React.FC = () => {
                     }}
                     className="absolute top-2"
                 />
+                </Link>
                 <div className="text-left flex flex-col items-start">
                     <h1 className="font-nunito text-60 text-neutral-black leading-tighter tracking-tighter font-extrabold mb-4">
                         Login
