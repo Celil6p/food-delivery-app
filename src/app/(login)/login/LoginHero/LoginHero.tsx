@@ -43,8 +43,8 @@ const LoginHero: React.FC = () => {
                         <Image
                             src="/login-hero-slider-content.png"
                             alt="Slider content"
-                            height={650}
-                            width={650}
+                            height={600}
+                            width={600}
                             style={{
                                 height: "auto",
                                 width: "auto",
@@ -55,8 +55,8 @@ const LoginHero: React.FC = () => {
                         <Image
                             src="/login-hero-slider-content.png"
                             alt="Slider content"
-                            height={650}
-                            width={650}
+                            height={600}
+                            width={600}
                             style={{
                                 height: "auto",
                                 width: "auto",
@@ -67,8 +67,8 @@ const LoginHero: React.FC = () => {
                         <Image
                             src="/login-hero-slider-content.png"
                             alt="Slider content"
-                            height={650}
-                            width={650}
+                            height={600}
+                            width={600}
                             style={{
                                 height: "auto",
                                 width: "auto",
@@ -79,8 +79,8 @@ const LoginHero: React.FC = () => {
                         <Image
                             src="/login-hero-slider-content.png"
                             alt="Slider content"
-                            height={650}
-                            width={650}
+                            height={600}
+                            width={600}
                             style={{
                                 height: "auto",
                                 width: "auto",
@@ -91,8 +91,8 @@ const LoginHero: React.FC = () => {
                         <Image
                             src="/login-hero-slider-content.png"
                             alt="Slider content"
-                            height={650}
-                            width={650}
+                            height={600}
+                            width={600}
                             style={{
                                 height: "auto",
                                 width: "auto",
