@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Food Delivery App
+
+This project is built using [Next.js 14](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), chosen for its cutting-edge features and capabilities. Next.js offers improved performance with its Rust compiler, enhanced image optimization, and Incremental Static Regeneration (ISR), which contributes to an excellent developer experience and a high-performing application.
 
 ## Getting Started
+### Prerequisites
 
-First, run the development server:
+Ensure you have the following installed:
+
+- Node.js 20.x or later
+- PNPM package manager
+
+### Local Development
+
+Follow these steps to set up the project on your local machine for development:
+
+1. **Clone the repository:**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/your-username/food-delivery-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Navigate to the project directory:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+    cd food-delivery-app
+```
+3. **Install the dependencies:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+    pnpm install
+```
+4. **Start the development server:**
 
-## Learn More
+```bash
+    pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Visit [http://localhost:3000](http://localhost:3000) with your browser to view the application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Accessing the Application Online
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The app is deployed and accessible at [here](https://food-delivery-app-omega.vercel.app/).
 
-## Deploy on Vercel
+### Implemented Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application includes the following pages, created based on the provided Figma designs:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Homepage (`"/"`):** The main landing page of the app.
+- **Login (`"/login"`):** The login page for user authentication.
+- **Settings (`"/settings"`):** The primary settings page with various configuration options.
+- **Account Settings (`"/settings/account"`):** The user account settings page.
+
+## File Structure Overview
+### Why Parentheses in Filenames?
+
+In our file structure, parentheses indicate optional or dynamic route segments. This is a Next.js App Router convention where:
+
+- `page.js` files define publicly accessible routes.
+- `layout.js` files define layouts that are shared between multiple pages.
+
+Related documentation is [here]{https://nextjs.org/docs/app/building-your-application/routing/route-groups}.
+
+For example, `(login)` in our directory signifies an optional segment for the login route.
+
+
+The project is organized into distinct directories:
+
+- `app/(login)`: Login functionality related files.
+- `app/(main)`: Main interface components and pages.
+- `app/(navigation)`: Navigation components like the navbar and hamburger menu.
+
+Each directory includes a `layout.tsx` for defining the layout of that section.
+
+### Login Directory
+
+- `layout.tsx`: Layout for the login section.
+- `login/LoginForm/FormButton.tsx`: Reusable form submission button.
+- `login/LoginForm/LoginForm.tsx`: Main login form component.
+- `login/LoginHero/LoginHero.module.css`: Styling for the login hero component.
+- `login/LoginHero/LoginHero.tsx`: Visual element for the login page.
+- `login/LoginHero/overrides.css`: Overrides for specific styles.
+- `login/page.tsx`: Renders the complete login page.
+
+### Main Directory
+
+- `CategoryButton.tsx`: Displays categories.
+- `CategoryButton.tsx`: Displays categories.
+- `MainLayout.tsx`: Wraps the main content.
+- `PromotionCard.tsx`: Displays promotions.
+- `RestaurantCard.tsx`: Represents restaurants.
+- `layout.tsx`: Layout for main content pages.
+- `page.tsx`: Main content entry point (Other pages are not ready yet since only the main page given in the figma file).
+- `settings/SettingItem.tsx`: Individual setting item.
+- `settings/Settings.tsx`: Main settings component.
+- `settings/account/page.tsx`: Account settings (Other settings pages are not ready yet since only the account given in the figma file).
+- `settings/layout.tsx`: Layout for settings.
+- `settings/page.tsx`: User settings main page.
+
+### Navigation Directory
+
+- `HamburgerMenu.tsx`: Mobile menu component.
+- `Navbar.tsx`: Application navigation bar.
+
+### Global Assets
+
+- `favicon.ico`: Website favicon.
+- `globals.css`: Global application styles.
+
+## Routing
+
+Routes are managed within the `app` directory. Each `page.tsx` corresponds to a specific route, containing component definitions, data-fetching methods, and layouts.
+
+## Components
+
+Reusable pieces of the application, located in their respective directories and imported as needed. For instance, `LoginForm.tsx` is included within `login/page.tsx` to render the form.
+
+## Styles
+
+The project uses TailwindCSS for styling, utilizing CSS modules for component-scoped styles and a global CSS file for universal styles.
+
+## Conclusion
+
+The application follows best practices in organization, modularity, and styling, using Next.js 14's App Router for dynamic routing and enhancing maintainability.
