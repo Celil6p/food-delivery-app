@@ -40,7 +40,7 @@ Follow these steps to set up the project on your local machine for development:
 1. **Clone the repository:**
 
 ```bash
-   git clone https://github.com/your-username/food-delivery-app.git
+   git clone https://github.com/celil6p/food-delivery-app.git
 ```
 
 2. **Navigate to the project directory:**
