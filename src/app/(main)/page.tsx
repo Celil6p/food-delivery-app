@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import PromotionCard from "./PromotionCard";
 import CategoryButton from "./CategoryButton";
 import RestaurantCard from "./RestaurantCard";
@@ -65,6 +67,35 @@ const dummyRestaurants = [
 ];
 
 const Home = () => {
+
+     // State to track selected categories
+
+    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+    // Handler function to add or remove categories based on user interaction
+    const handleCategoryChange = (categoryLabel: string) => {
+        setSelectedCategories((prevCategories) => {
+            if (prevCategories.includes(categoryLabel)) {
+                // If the category is already selected, remove it
+                return prevCategories.filter(
+                    (category) => category !== categoryLabel
+                );
+            } else {
+                // If the category is not selected, add it
+                return [...prevCategories, categoryLabel];
+            }
+        });
+    };
+
+     // Filtered restaurants based on selected categories
+    const filteredRestaurants = dummyRestaurants.filter((restaurant) =>
+        selectedCategories.length === 0 || selectedCategories.some(
+            (category: string) =>
+                Array.isArray(restaurant.tags) &&
+                restaurant.tags.includes(category)
+        )
+    );
+
     return (
         <>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 my-8">
@@ -96,6 +127,9 @@ const Home = () => {
                         key={index}
                         label={category.label}
                         iconSrc={category.src}
+                        onClick={() => handleCategoryChange(category.label)}
+                        // Apply styles based on category selection
+                        className={selectedCategories.includes(category.label) ? "bg-light-indigo ring-2 ring-offset-2" : "bg-white"}
                     />
                 ))}
             </div>
@@ -105,19 +139,24 @@ const Home = () => {
             </div>
             {/*Restaurants*/}
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 items-center justify-center gap-8 my-8">
-                {dummyRestaurants.map((restaurant, index) => (
-                    <Link href={"/login"} key={index}> 
-                        <RestaurantCard
-                            key={index}
-                            name={restaurant.name}
-                            imageSrc={restaurant.imageSrc}
-                            time={restaurant.time}
-                            minPrice={restaurant.minPrice}
-                            tags={restaurant.tags}
-                            cartSize={restaurant.cartSize}
-                        />
-                    </Link>
-                ))}
+            {/* Conditionally render restaurants or a message if none are found */}
+            {filteredRestaurants.length === 0 ? (
+                    <p>No restaurants found.</p>
+                ) : (
+                    filteredRestaurants.map((restaurant, index) => (
+                        <Link href={"/login"} key={index}>
+                            <RestaurantCard
+                                key={index}
+                                name={restaurant.name}
+                                imageSrc={restaurant.imageSrc}
+                                time={restaurant.time}
+                                minPrice={restaurant.minPrice}
+                                tags={restaurant.tags}
+                                cartSize={restaurant.cartSize}
+                            />
+                        </Link>
+                    ))
+                )}
             </div>
         </>
     );
